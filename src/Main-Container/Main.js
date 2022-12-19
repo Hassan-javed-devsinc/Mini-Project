@@ -1,7 +1,7 @@
 import React from "react";
 import Lower_Container from "./Lower_Container";
 import { useState } from "react";
-import Sauce from './Sauce'
+import Sauce from "./Sauce";
 import Display from "./Display";
 import "./Main.css";
 import top from "../Bun-Images/top-bun.png";
@@ -14,51 +14,33 @@ export default function Main() {
   const [cheese, setCheese] = useState([]);
   const [meat, setMeat] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
-  const [count, setcount] = useState(0)
+  const [count, setcount] = useState(0);
 
   const em = lettuce.length + barcon.length + cheese.length + meat.length;
 
   useEffect(() => {
-    if (em > 0) {
-      setIsEmpty(false);
-    } else {
-      setIsEmpty(true);
-    }
+    em > 0 ? setIsEmpty(false) : setIsEmpty(true);
   }, [em]);
 
   const lessHandler = (item) => {
-    if (item === "Lettuce") {
-      setLettuce(lettuce.slice(0, -1));
-    } else if (item === "Barcon") {
-      setBarcon(barcon.slice(0, -1));
-    } else if (item === "Cheese") {
-      setCheese(cheese.slice(0, -1));
-    } else {
-      setMeat(meat.slice(0, -1));
-    }
+    item === "Lettuce"
+      ? setLettuce(lettuce.slice(0, -1))
+      : item === "Barcon"
+      ? setBarcon(barcon.slice(0, -1))
+      : item === "Cheese"
+      ? setCheese(cheese.slice(0, -1))
+      : setMeat(meat.slice(0, -1));
   };
 
   const moreHandler = (item) => {
-    setcount((prev) => {
-      return prev + 1;
-    });
-    if (item === "Lettuce") {
-      setLettuce((prev) => {
-        return [...prev, <Sauce key={count} className="lettuce" />];
-      });
-    } else if (item === "Barcon") {
-      setBarcon((prev) => {
-        return [...prev, <Sauce key={count}  className="barcon" />];
-      });
-    } else if (item === "Cheese") {
-      setCheese((prev) => {
-        return [...prev, <Sauce key={count}  className="cheese" />];
-      });
-    } else {
-      setMeat((prev) => {
-        return [...prev, <Sauce key={count} className="meat" />];
-      });
-    }
+    setcount((prev) => prev + 1);
+    item === "Lettuce"
+      ? setLettuce((prev) => [...prev,<Sauce key={count} className="lettuce" />])
+      : item === "Barcon"
+      ? setBarcon((prev) => [...prev, <Sauce key={count} className="barcon" />])
+      : item === "Cheese"
+      ? setCheese((prev) => [...prev, <Sauce key={count} className="cheese" />])
+      : setMeat((prev) => [...prev, <Sauce key={count} className="meat" />]);
   };
 
   return (

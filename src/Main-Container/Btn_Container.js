@@ -4,16 +4,14 @@ import "./Btn_Container.css"
 
 export default function Btn_Container(props) {
     
-    const [disable, setDisable] = useState(props.type.length)
+    const [disable, setDisable] = useState(props.objects[props.index].length)
 
     useEffect(() => {
-        
-        props.type.length === 0 ? setDisable(true) : setDisable(false);
-        
-    }, [props.type.length])
+      props.objects[props.index].length === 0
+        ? setDisable(true)
+        : setDisable(false);
+    }, [props.objects[props.index].length]);
     
-
-
     const lessHandler = () => {
         props.lessHandler(props.name)
     }
@@ -22,14 +20,13 @@ export default function Btn_Container(props) {
         props.moreHandler(props.name)
     }
     
-  
     return (
       <div>
         <table className="tab">
           <tbody>
             <tr>
               <th className="wid">
-                <span className="name">{props.name}</span>
+                <span className="name">{props.ingre[props.index]}</span>
               </th>
               <th>
                 <button

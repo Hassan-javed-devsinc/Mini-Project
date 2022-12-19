@@ -2,82 +2,54 @@ import React from "react";
 import Btn_Container from "./Btn_Container";
 import { useState } from "react";
 import "./Lower_Container.css";
-import Login from "../Login/Login";
 import { useNavigate } from "react-router-dom"
 
-export default function Lower_Container(props, { navigation }) {
+export default function Lower_Container(props) {
   const navigate = useNavigate();
-  const [price, setPrice] = useState(3.0);
+  const [price, setPrice] = useState(3.00);
   var ingr = ["Lettuce", "Barcon", "Cheese", "Meat"];
-  const priceList = [0.4, 0.7, 1.2, 3];
+  const priceList = [0.4, 0.7, 1.2, 3.00];
+  const objects = [props.lettuce, props.barcon,props.cheese,props.meat];
 
   const lessHandler = (item) => {
     props.lessHandler(item);
-    reducePrice(item);
+    priceHandler(item,"-")
   };
 
   const moreHandler = (item) => {
     props.moreHandler(item);
-    addPrice(item);
+    priceHandler(item, "+");
   };
 
-  const reducePrice = (item) => {
+  const priceHandler = (item,opr) => {
     let i = ingr.indexOf(item);
-    setPrice((prev) => {
-      return parseFloat(parseFloat(prev) - parseFloat(priceList[i])).toFixed(2);
-    });
-  };
-
-  const addPrice = (item) => {
-    let i = ingr.indexOf(item);
-    console.log(item);
-    setPrice((prev) => {
-      return parseFloat(parseFloat(prev) + parseFloat(priceList[i])).toFixed(2);
-    });
-  };
-  const signupHandler = () => {};
+    opr === "+"
+      ? setPrice((prev) => prev + priceList[i]) 
+      : setPrice((prev) => prev - priceList[i])
+  }
 
   return (
     <div className="low-con">
       <p className="price">
-        Current Price : $<b>{price}</b>
+        Current Price : $<b>{price.toFixed(2)}</b>
       </p>
       <div className="low-size">
-        <Btn_Container
-          type={props.lettuce}
-          name={ingr[0]}
-          key={ingr[0]}
-          lessHandler={lessHandler}
-          moreHandler={moreHandler}
-        />
-        <Btn_Container
-          type={props.barcon}
-          name={ingr[1]}
-          key={ingr[1]}
-          lessHandler={lessHandler}
-          moreHandler={moreHandler}
-        />
-        <Btn_Container
-          type={props.cheese}
-          name={ingr[2]}
-          key={ingr[2]}
-          lessHandler={lessHandler}
-          moreHandler={moreHandler}
-        />
-        <Btn_Container
-          type={props.meat}
-          name={ingr[3]}
-          key={ingr[3]}
-          lessHandler={lessHandler}
-          moreHandler={moreHandler}
-        />
+        {
+          ingr.map((i,index)=>{
+            return <Btn_Container
+              name={i}
+              key={index}
+              index={index}
+              objects={objects}
+              lessHandler={lessHandler}
+              moreHandler={moreHandler}
+              ingre={ingr}
+            />;
+          })
+        }
+        
         <button
-          onClick={() => {
-            console.log("first");
-            return navigate("/login")
-          }}
-
-          type="button"
+          onClick={() => navigate("/login")}
           disabled={props.disable}
           className={props.disable ? "disable-signup" : "sign-up"}
         >
