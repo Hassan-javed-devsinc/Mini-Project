@@ -1,0 +1,27 @@
+.btm-bun{
+    margin-top: 0.5rem;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.empty{
+    padding: 0.8rem;
+}
+.main-top{
+    height: 65vh;
+    width: 35vw;
+    margin-top: 2rem;
+    overflow-y: auto;
+}
+.burger-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+.main-btm{
+    width: 100%;
+}

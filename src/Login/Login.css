@@ -1,0 +1,53 @@
+.inner-con{
+    width: 35vw;
+    height: 40vh;
+    /* border: 1px solid brown; */
+     /* box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+*/
+    border: 1px solid rgb(211, 210, 210);
+  
+
+}
+
+.outer-con{
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.mail{
+    margin-top: 1.5rem;
+    width: 30vw;
+    padding: 0.4rem;
+    font-size: 1rem;
+    border: 1px solid rgb(211, 210, 210);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signin{
+    background-color: white;
+    border: none;
+    margin-top: 2rem;
+    color: #703b09 ;
+    
+    font-weight: bold;
+    font-size: 1rem;
+}
+.submit{
+    background-color: white;
+    border: none;
+    color: rgba(8, 134, 8, 0.708) ;
+    font-weight: bold;
+    margin-top: 2rem;
+    font-size: 1rem;
+}

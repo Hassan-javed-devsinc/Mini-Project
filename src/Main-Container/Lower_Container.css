@@ -1,0 +1,27 @@
+.low-size{
+     margin: auto;   
+}
+.low-con{
+     background-color: #cf8f2e;
+}
+.price{
+     padding: 1rem;
+}
+.sign-up{
+     padding: 1rem;
+     margin: 1rem;
+     font-size: 1.2rem;
+     color: #966909;
+     background-color:#dad735;
+     border: none;
+}
+.disable-signup{
+     padding: 1rem;
+     margin: 1rem;
+     font-size: 1.2rem;
+     color: gray;
+     background-color: rgb(205, 199, 199);
+     cursor: no-drop;
+     border: none;
+}
+

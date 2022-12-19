@@ -1,0 +1,40 @@
+* {
+}
+.header {
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  background-color: #703b09;
+  /* border: 1px solid red; */
+}
+.logo {
+  width: 4rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  background-color: white;
+  margin: 0.4rem 0 0 1rem;
+}
+.link {
+}
+.link-container {
+  padding: 1rem;
+}
+.login-link {
+  padding: 1.4rem;
+  color: white;
+  text-decoration: none;
+}
+.burger-link {
+  padding: 1.4rem;
+  color: white;
+  text-decoration: none;
+  background-color: #8f5c2c;
+  border-bottom: 5px solid #44a1c1;
+}
+.burger-link:hover,
+.login-link:hover {
+  background-color: #8f5c2c;
+  border-bottom: 5px solid #44a1c1;
+}

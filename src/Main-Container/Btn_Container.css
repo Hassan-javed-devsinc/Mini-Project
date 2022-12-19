@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.row{
+
+}
+.tab{
+    margin: auto;
+    padding: 0.5rem;
+}
+
+.name{
+
+}
+.wid{
+    width: 5rem;
+    /* border: 1px solid orange; */
+    text-align: left;
+}
+.less{
+    margin-left:1rem;
+    padding: 0.4rem;
+    width: 5rem;
+    background-color: #d39952;
+    border: 1px solid #8f5e1e;
+    font-size: 1rem;
+    color: white;
+}
+
+.more{
+    margin-left: 1rem;
+    padding: 0.4rem;
+    width: 5rem;
+    font-size: 1rem;
+    background-color: #8f5e1e;
+    border: 1px solid #8f5e1e;
+    color: white;
+}
+.disable{
+    margin-left: 1rem;
+    padding: 0.4rem;
+    width: 5rem;
+    border: 1px solid#7e7365;
+    font-size: 1rem;
+    color: #cccccc;
+    background-color: #ac9980;
+    cursor: no-drop;
+}
