@@ -25,7 +25,7 @@ export default function Nav() {
           <header className='header'>
             <img className='logo' src={logo} />
             <div className='link-container'>
-                <NavLink className={burger} to='/' onClick={burgerHandler} >Burger Builder</NavLink>
+                <NavLink className={burger} to='/Mini-project' onClick={burgerHandler} >Burger Builder</NavLink>
                 <NavLink className={login} to='/login' onClick={loginHandler} >Login</NavLink>
             </div>
           </header>

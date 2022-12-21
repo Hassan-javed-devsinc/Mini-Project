@@ -35,7 +35,10 @@ export default function Main() {
   const moreHandler = (item) => {
     setcount((prev) => prev + 1);
     item === "Lettuce"
-      ? setLettuce((prev) => [...prev,<Sauce key={count} className="lettuce" />])
+      ? setLettuce((prev) => [
+          ...prev,
+          <Sauce key={count} className="lettuce" />,
+        ])
       : item === "Barcon"
       ? setBarcon((prev) => [...prev, <Sauce key={count} className="barcon" />])
       : item === "Cheese"
